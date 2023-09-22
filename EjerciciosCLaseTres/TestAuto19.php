@@ -53,7 +53,7 @@ foreach ($arrayAutos as $value) {
     echo "<br> <br>";
 }
 
-$retorno = Auto::GuardarListaAutosEnTxt($arrayAutos);
+$retorno = Auto::GuardarListaAutosEnCSV($arrayAutos);
 var_dump($retorno);
 
 echo "<br>------------------------------<br>";

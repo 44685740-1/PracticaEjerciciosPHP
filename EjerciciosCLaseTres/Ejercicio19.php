@@ -118,7 +118,7 @@ class Auto
     }
 
 
-    public static function GuardarListaAutosEnTxt($listaAutos)
+    public static function GuardarListaAutosEnCSV($listaAutos)
     {
         $stringAutos = "Color,Marca,Precio,Fecha";
 
@@ -145,10 +145,10 @@ class Auto
         $autos = [];
 
         if (($archivo = fopen($nombreArchivo, 'r')) !== false) {
-            $headerSkipped = false;
+            $encabezadoFantasma = false;
             while (($data = fgetcsv($archivo)) !== false) {
-                if (!$headerSkipped) {
-                    $headerSkipped = true;
+                if (!$encabezadoFantasma) {
+                    $encabezadoFantasma = true;
                     //continue se salta la iteracion cuando estamos en un bucle, es decir que se salta la iteracion que lee el header
                     continue;
                 }
